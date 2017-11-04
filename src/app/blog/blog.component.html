@@ -1,0 +1,79 @@
+<app-banner>
+</app-banner>
+<!-- banner-bottom -->
+<div class="clearfix"> </div>
+<div>
+    <div class="container">
+        <div class="banner-bottom-grids">
+            <div class="video-grids">
+                <div class="video-bottom-grids" *ngFor="let b of blogsGrid let i = index">
+                    <div class="video-bottom-grids1">
+                        <div class="col-md-3 video-bottom-grid" *ngFor="let blog of b let i = index">
+                            <div class="video-bottom-grid1">
+                                <div class="video-bottom-grid1-before">
+                                    <div class="image" *ngIf="blog.images?.length; else defaultImage">
+                                        <img [src]="blog.images[0].file_path" class="img-responsive" alt="">
+                                    </div>
+                                    <ng-template #defaultImage>
+                                        <img src="assets/images/13.jpg" alt=" " class="img-responsive" />
+                                    </ng-template>
+                                </div>
+                                <ul>
+                                    <li><a [routerLink]="['story', blog.slug]">{{ blog.title }}</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <!-- news-and-events -->
+        <div class="news">
+            <div class="news-grids">
+                <div class="col-md-8 news-grid-left">
+                    <ul>
+                        <li *ngFor="let blog of blogsGrid[blogsGrid?.length-1] let i = index">
+                            <!-- <div class="news-grid-left1">
+                                
+                            </div> -->
+                            <div class="news-grid-right1">
+                                <h4><a [routerLink]="['story', blog.slug]">{{ blog.title }}</a></h4>
+                                <h5>By <a href="#">MICKY</a> <label>|</label> <i>{{ blog.created_at | date: 'dd/MM/yyyy' }}</i></h5>
+                                <p class="e2e-inner-html-bound" [innerHTML]="blog.description"></p>
+                                <div class="image" *ngIf="blog.images?.length">
+                                    <img [src]="blog.images[0].file_path" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 news-grid-right">
+
+                    <div class="news-grid-rght2">
+                        <h3>subscribe to our newsletter</h3>
+                        <p>Get the latest news and updates by signing up to our daily newsletter.We won't sell your email or spam you !</p>
+                        <form>
+                            <input type="text" value="enter your Email address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'enter your Email address';}">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                    <div class="news-grid-rght3">
+                        <img src="images/18.jpg" alt=" " class="img-responsive" />
+                        <div class="story">
+                            <p>story of the week</p>
+                            <h3><a href="single.html">US hails west Africa Ebola progress</a></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //news-and-events -->
+
+    </div>
+</div>

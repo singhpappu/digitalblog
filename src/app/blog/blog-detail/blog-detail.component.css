@@ -1,0 +1,20 @@
+.blog-title {
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    letter-spacing: -.02em;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 25px;
+    margin-left: -2.13px;
+    line-height: 1.15;
+    letter-spacing: -.015em;
+}
+
+.user-image img {
+    width: 100%;
+}
+
+.user-image a {
+    width: 100%;
+}
